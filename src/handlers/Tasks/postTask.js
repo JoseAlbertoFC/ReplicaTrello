@@ -5,7 +5,6 @@ const postTask = async (req, res) => {
 
   try {
     const result = await createTask(name, description, status);
-    console.log("*****************************************")
     res.status(200).json(result);
   } catch (error) {
     console.log(error.message);
@@ -14,4 +13,6 @@ const postTask = async (req, res) => {
   }
 };
 
-module.exports = { postTask };
+module.exports = {
+  postTask
+};

@@ -31,14 +31,14 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Project, Task, TeamMember } = sequelize.models;
 
 
-Project.hasMany(Task, { as: "tasks", foreignKey: "projectId" });
-Project.hasMany(TeamMember, { as: "teamMembers", foreignKey: "projectId" });
+Project.hasMany(Task, { as: "task", foreignKey: "projectId" });
+Project.hasMany(TeamMember, { as: "teamMember", foreignKey: "projectId" });
 
 Task.belongsTo(Project, { as: "project", foreignKey: "projectId" });
 Task.belongsTo(TeamMember, { as: "teamMember", foreignKey: "teamMemberId" });
 
 TeamMember.belongsTo(Project, { as: "project", foreignKey: "projectId" });
-TeamMember.hasMany(Task, { as: "tasks", foreignKey: "teamMemberId" });
+TeamMember.hasMany(Task, { as: "task", foreignKey: "teamMemberId" });
 
 
 module.exports = {
