@@ -20,7 +20,7 @@ const updProject = async (info, idToUpd) => {
       );
       else return 'WOWOWOOWOWOWWOOWOWOOWow... como que algo salió mal.'
   } catch (error) {
-    throw new Error({ error: error.message });
+    throw new Error( error.message );
   }
 };
 

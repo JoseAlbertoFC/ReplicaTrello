@@ -3,7 +3,7 @@ const {updProject} = require('../../controllers/Projects/updProject');
 const updateProjects = async(req, res)=>{
     try {
         const {id} = req.params;
-        const {name, description} = req.body;
+        const {name} = req.body;
 let result;
         if(id && isNaN(id)){
             if(!name) return res.status(400).json('No name, no Project Update, sorry');
@@ -12,6 +12,7 @@ let result;
         } else return 'Sin Id no creo que podamos continuar, sorry';
     } catch (error) {
         res.status(400).json({error: error.message})
+        throw new Error(error.message)
         
     }
 }
