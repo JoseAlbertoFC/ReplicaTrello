@@ -5,7 +5,7 @@ const updProject = async (info, idToUpd) => {
     const { name, description } = info;
 
     if (!idToUpd)
-      return "Without Id we cant affort a successful updating operation.";
+      return "Without Id we cant affort a successful updating operation."
     if (!name)
       return "Sorry, you can't update this Project Reference without a name, because it's necessary for the Database.";
 
