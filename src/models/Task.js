@@ -7,8 +7,8 @@ module.exports = (sequelize) => {
       id: {
         type: DataTypes.UUID,
         primaryKey: true,
-        allowNull:false,
-        defaultValue: Sequelize.UUIDV4
+        allowNull: false,
+        defaultValue: Sequelize.UUIDV4,
       },
       name: {
         type: DataTypes.STRING,
@@ -19,9 +19,14 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       status: {
-        type: DataTypes.ENUM("Pending", "In Process", "Waiting for Approval", "Completed")
-      }
+        type: DataTypes.ENUM(
+          "Pending",
+          "In Process",
+          "Waiting for Approval",
+          "Completed"
+        ),
+      },
     },
-    { timestamps: false, paranoid: true }
+    { timestamps: true, paranoid: true }
   );
 };
