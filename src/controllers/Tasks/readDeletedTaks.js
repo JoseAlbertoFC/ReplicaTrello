@@ -11,10 +11,15 @@ const readDeletedTasks = async () => {
       },
       paranoid: false,
     });
-    return tasksDeleted;
+
+    return {
+      success: true,
+      message: "Deleted tasks retrieved successfully",
+      tasksDeleted,
+    };
   } catch (error) {
     console.log(error.message);
-    throw new Error({ error: error.message });
+    throw new Error(error.message);
   }
 };
 
