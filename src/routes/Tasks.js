@@ -9,7 +9,7 @@ const { getDeletedTasks } = require("../handlers/Tasks/getDeletedTasks");
 const tasksRoutes = Router();
 
 tasksRoutes.post("/newTask", postTask);
-tasksRoutes.get("/tasks", getTasks)
+tasksRoutes.post("/tasks", getTasks)
 tasksRoutes.get("/deletedTasks", getDeletedTasks)
 tasksRoutes.delete("/deleteTask/:id", deleteTask);
 tasksRoutes.put("/updateTask/:id", putTask);
