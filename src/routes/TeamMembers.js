@@ -6,8 +6,11 @@ const { updTeamMembers } = require('../handlers/TeamMembers/updTeamMembers');
 
 const routesForTeams = Router();
 
-routesForTeams.post('/createTMs', postTeamMember);
-routesForTeams.get("/readTMs", getTeamMembers)
+routesForTeams.post("/readTMs", getTeamMembers)
+routesForTeams.post('/createTMs', postTeamMember)
 .put('/updTMs/:id', updTeamMembers)
+
+
+
 
 module.exports={routesForTeams};
