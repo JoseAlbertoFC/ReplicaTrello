@@ -6,6 +6,6 @@ const { getTeamMembers } = require('../handlers/TeamMembers/getTeamMembers');
 const routesForTeams = Router();
 
 routesForTeams.post('/createTMs', postTeamMember);
-routesForTeams.get("/readTMs", getTeamMembers)
+routesForTeams.post("/readTMs", getTeamMembers)
 
 module.exports={routesForTeams};
